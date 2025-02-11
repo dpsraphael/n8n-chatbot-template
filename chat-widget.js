@@ -79,14 +79,7 @@
         }
 
         .n8n-chat-widget .new-conversation {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-            max-width: 300px;
+            display: none;
         }
 
         .n8n-chat-widget .welcome-text {
@@ -133,13 +126,9 @@
         }
 
         .n8n-chat-widget .chat-interface {
-            display: none;
+            display: flex;
             flex-direction: column;
             height: 100%;
-        }
-
-        .n8n-chat-widget .chat-interface.active {
-            display: flex;
         }
 
         .n8n-chat-widget .chat-messages {
@@ -392,7 +381,10 @@
     const sendButton = chatContainer.querySelector('button[type="submit"]');
 
     function generateUUID() {
-        return crypto.randomUUID();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     }
 
     async function startNewConversation() {
@@ -504,7 +496,6 @@
     // Open chat after 30 seconds and start new conversation
     setTimeout(() => {
         chatContainer.classList.add('open');
-        chatContainer.querySelector('.new-conversation').style.display = 'none';
         chatInterface.classList.add('active');
         startNewConversation();
     }, 30000);
