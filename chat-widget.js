@@ -103,4 +103,9 @@
     closeButton.addEventListener('click', () => {
         chatContainer.classList.remove('open');
     });
+
+    // OUVERTURE AUTOMATIQUE DU CHAT AU CHARGEMENT DE LA PAGE
+    window.addEventListener('load', () => {
+        chatContainer.classList.add('open');
+    });
 })();
