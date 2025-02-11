@@ -79,14 +79,7 @@
         }
 
         .n8n-chat-widget .new-conversation {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-            max-width: 300px;
+            display: none;
         }
 
         .n8n-chat-widget .welcome-text {
@@ -133,13 +126,9 @@
         }
 
         .n8n-chat-widget .chat-interface {
-            display: none;
+            display: flex;
             flex-direction: column;
             height: 100%;
-        }
-
-        .n8n-chat-widget .chat-interface.active {
-            display: flex;
         }
 
         .n8n-chat-widget .chat-messages {
@@ -504,6 +493,7 @@
     // Open chat after 30 seconds and start new conversation
     setTimeout(() => {
         chatContainer.classList.add('open');
+        chatInterface.classList.add('active');
         startNewConversation();
     }, 30000);
 })();
