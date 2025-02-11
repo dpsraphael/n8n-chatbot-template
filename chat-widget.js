@@ -347,7 +347,7 @@
         <div class="chat-interface">
             <div class="chat-messages"></div>
             <div class="chat-input">
-                <textarea placeholder="Type your message here..." rows="1"></textarea>
+                <textarea placeholder="Entre ton message ici..." rows="1"></textarea>
                 <button type="submit">Envoyer</button>
             </div>
             <div class="chat-footer">
